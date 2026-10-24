@@ -19,6 +19,9 @@ The project is designed for privacy-conscious environments where documents and m
 - **Modern Streamlit interface:** Upload documents, monitor indexing status, chat with the knowledge base, and inspect retrieved sources.
 - **PDF and TXT support:** Extract and process common document formats locally.
 
+[![RAG System User Interface](src/RAG_System_Interface.png)]([https://www.youtube.com/watch?v=VIDEO_ID](https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing))
+
+
 ## 🏗️ System Architecture
 
 The application follows a multi-stage retrieval and generation pipeline.
