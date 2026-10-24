@@ -23,7 +23,7 @@ The project is designed for privacy-conscious environments where documents and m
 
 [![RAG System User Interface](src/RAG_System_Interface.png)]([https://www.youtube.com/watch?v=VIDEO_ID](https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing))
 
-![Video]([https://anti-trust.rocks/albums/TheArbiterOfTruth.mp4](https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing))
+![Video]([https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing])
 
 
 ## 🏗️ System Architecture
