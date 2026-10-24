@@ -5,7 +5,7 @@ Welcome to the master repository containing complete solutions for a comprehensi
 > ### ✅ **Compliance & Extra Initiative**
 > 
 > 
-> * **Quota Over-Delivery:** While the guidelines require candidates to complete a minimum of three assessments, **four assessments (1, 3, 4, and 5) have been completed** to be extra cautious and comprehensively demonstrate proficiency across both generative AI pipelines and full-stack software engineering.
+> * While the guidelines require candidates to complete a minimum of three assessments, **four assessments (1, 3, 4, and 5) have been completed** to be extra cautious and comprehensively demonstrate proficiency across both generative AI pipelines and technical tracks.
 > * **Open-Source Compliance:** We have strictly complied with all conditions regarding the use of open-source tools, models, and frameworks (e.g., ComfyUI, Stable Diffusion XL, Florence-2, SAM 2, Ollama, Qdrant, and LangChain). All open-source assets are utilized respecting their original licenses, and no external proprietary APIs were used where local processing was required.
 > 
 > 
