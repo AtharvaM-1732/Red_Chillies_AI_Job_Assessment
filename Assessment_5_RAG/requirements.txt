@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-huggingface
+langchain-experimental
+langchain-text-splitters
+langchain-qdrant
+qdrant-client
+rank-bm25
+sentence-transformers
+pymupdf4llm

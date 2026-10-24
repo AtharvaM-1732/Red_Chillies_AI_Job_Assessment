@@ -1,0 +1,135 @@
+
+[
+  {
+    "id": "TC01",
+    "question": "What items are included in the box?",
+    "expected_keywords": [
+      "headset",
+      "USB-A to USB-C",
+      "microphone",
+      "wireless dongle",
+      "warranty card"
+    ],
+    "expected_pages": ["3"],
+    "answerable": true
+  },
+  {
+    "id": "TC02",
+    "question": "How long does the headset take to charge fully?",
+    "expected_keywords": ["2 hours"],
+    "expected_pages": ["6", "12"],
+    "answerable": true
+  },
+  {
+    "id": "TC03",
+    "question": "How do I turn the headset on and off?",
+    "expected_keywords": ["slide", "up", "down", "white"],
+    "expected_pages": ["8"],
+    "answerable": true
+  },
+  {
+    "id": "TC04",
+    "question": "How do I connect the headset to a PC?",
+    "expected_keywords": ["USB-A", "dongle", "playback", "recording"],
+    "expected_pages": ["9", "10"],
+    "answerable": true
+  },
+  {
+    "id": "TC05",
+    "question": "How do I manually pair the headset and dongle?",
+    "expected_keywords": ["5 seconds", "flashes white", "solid white"],
+    "expected_pages": ["11"],
+    "answerable": true
+  },
+  {
+    "id": "TC06",
+    "question": "What is the battery capacity and music playback time?",
+    "expected_keywords": ["500 mAh", "22 hours"],
+    "expected_pages": ["12"],
+    "answerable": true
+  },
+  {
+    "id": "TC07",
+    "question": "What is the microphone pickup pattern?",
+    "expected_keywords": ["omni-directional"],
+    "expected_pages": ["12"],
+    "answerable": true
+  },
+  {
+    "id": "TC08",
+    "question": "My headset has no sound. What should I check?",
+    "expected_keywords": ["default device", "volume", "paired"],
+    "expected_pages": ["13"],
+    "answerable": true
+  },
+  {
+    "id": "TC09",
+    "question": "Why can't my teammates hear my voice?",
+    "expected_keywords": ["default", "microphone", "muted"],
+    "expected_pages": ["14"],
+    "answerable": true
+  },
+  {
+    "id": "TC10",
+    "question": "What are the driver size and frequency response?",
+    "expected_keywords": ["40 mm", "20 Hz", "20 kHz"],
+    "expected_pages": ["12"],
+    "answerable": true
+  },
+  {
+    "id": "TC11",
+    "question": "Can I use a USB-C to USB-C cable to charge it?",
+    "expected_keywords": ["USB-C to USB-C", "not supplied"],
+    "expected_pages": ["6"],
+    "answerable": true
+  },
+  {
+    "id": "TC12",
+    "question": "Does the manual guarantee compatibility with every USB-A port?",
+    "expected_keywords": ["not guaranteed"],
+    "expected_pages": ["11"],
+    "answerable": true
+  },
+  {
+    "id": "TC13",
+    "question": "What is the maximum operating temperature?",
+    "expected_keywords": ["45", "°C"],
+    "expected_pages": ["12"],
+    "answerable": true
+  },
+  {
+    "id": "TC14",
+    "question": "What are the impedance and microphone sensitivity?",
+    "expected_keywords": ["32 ohm", "-42 dBV/Pa"],
+    "expected_pages": ["12"],
+    "answerable": true
+  },
+  {
+    "id": "TC15",
+    "question": "Does this headset support Bluetooth 5.3?",
+    "expected_keywords": [],
+    "expected_pages": [],
+    "answerable": false
+  },
+  {
+    "id": "TC16",
+    "question": "What is the current retail price of the headset?",
+    "expected_keywords": [],
+    "expected_pages": [],
+    "answerable": false
+  },
+  {
+    "id": "TC17",
+    "question": "What is the warranty duration in India?",
+    "expected_keywords": [],
+    "expected_pages": [],
+    "answerable": false
+  },
+  {
+    "id": "TC18",
+    "question": "Does the headset have active noise cancellation?",
+    "expected_keywords": [],
+    "expected_pages": [],
+    "answerable": false
+  }
+]
