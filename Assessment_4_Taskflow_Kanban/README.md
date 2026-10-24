@@ -91,7 +91,7 @@ Because **Taskflow** requires no backend or package manager, installation is ins
 
 1. **Clone or extract the repository:**
 ```bash
-git clone 
+git clone https://github.com/AtharvaM-1732/Red_Chillies_AI_Job_Assessment/tree/main/Assessment_4_Taskflow_Kanban
 cd assessment-4-taskflow-kanban
 
 ```
@@ -111,9 +111,39 @@ python -m http.server 8080
 # Open http://localhost:8080 in your browser
 
 ```
+---
+### 📸 Application Screenshots
 
+Explore Taskflow's colorful interface and interactive features.
 
+---
 
+#### ☀️ Light Mode
+
+![Taskflow Light Mode Board](outputs/01_light_mode_board.png)
+
+The main Kanban workspace with four columns, task cards, priority colors, and task counters.
+
+---
+#### 🌙 Dark Mode
+
+![Taskflow Dark Mode Board](outputs/02_dark_mode_board.png)
+
+An adaptive dark theme with vivid priority accents and readable task cards.
+
+---
+#### 🚨 Overdue Task Alert
+
+![Taskflow Overdue Alert](outputs/03_overdue_vibrant_red_alert.png)
+
+Overdue tasks receive a high-contrast crimson surface and a prominent warning indicator.
+
+---
+#### 🕒 Activity History & Filters
+
+![Taskflow Activity Drawer and Filters](outputs/04_activity_drawer_and_filters.png)
+
+Activity history, task filtering, and additional workspace controls.
 
 ---
 
