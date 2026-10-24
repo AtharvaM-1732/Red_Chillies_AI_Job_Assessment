@@ -1,0 +1,9 @@
+# This repository uses a ComfyUI workflow; it has no standalone Python
+# inference or training script. Install ComfyUI separately:
+# https://github.com/comfyanonymous/ComfyUI
+#
+# Also install the custom-node packs that provide the node types used by
+# workflows/assessment3_florence2_sam2.json.
+#
+# Therefore, there are no additional pip requirements for this repository
+# itself. Model dependencies are managed by ComfyUI/custom nodes.
