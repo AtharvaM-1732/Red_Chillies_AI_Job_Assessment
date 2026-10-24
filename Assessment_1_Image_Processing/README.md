@@ -120,6 +120,8 @@ The current padding settings add 160 pixels to the left and 160 pixels to the ri
 
 The outpainting prompt encourages the model to continue the existing scenery while maintaining consistent lighting, colors, textures, and visual details.
 
+---
+
 ### Branch B — Object Removal and Addition
 
 The second branch uses a two-stage inpainting workflow.
