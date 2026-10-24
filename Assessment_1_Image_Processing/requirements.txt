@@ -1,0 +1,7 @@
+# This repository documents a ComfyUI workflow and does not currently include
+# a standalone Python inference or training script.
+#
+# Install ComfyUI and its dependencies separately:
+# https://github.com/comfyanonymous/ComfyUI
+#
+# No additional pip packages are required by the repository as currently structured.
