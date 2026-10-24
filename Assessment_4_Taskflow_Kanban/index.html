@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8ed">
+  <title>Taskflow — Kanban Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <a class="brand" href="#board" id="brandLink" aria-label="Taskflow home">
+        <span class="brand-icon">T</span>
+        <span>taskflow</span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <button type="button" class="nav-item active" id="navBoardBtn">
+          <span>▦</span> My board
+        </button>
+        <button type="button" class="nav-item" id="navActivityBtn">
+          <span>◷</span> Activity
+          <span class="nav-badge" id="activityCountBadge">0</span>
+        </button>
+      </nav>
+
+      <div class="workspace-label">QUICK ACTIONS</div>
+      <div class="sidebar-actions">
+        <button type="button" class="sidebar-action-btn" id="resetSampleBtn">
+          <span>↺</span> Reset Sample Data
+        </button>
+        <button type="button" class="sidebar-action-btn" id="exportJsonBtn">
+          <span>⇩</span> Export Board JSON
+        </button>
+      </div>
+
+      <!-- USER ACCOUNT PROFILE BUTTON -->
+      <button type="button" class="sidebar-bottom" id="userProfileBtn" aria-label="Edit User Account">
+        <div class="avatar" id="userAvatar">UA</div>
+        <div class="user-info">
+          <strong id="userNameDisplay">User Account</strong>
+          <small id="userWorkspaceDisplay">Personal Workspace</small>
+        </div>
+        <span class="profile-more" aria-hidden="true">⚙</span>
+      </button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span id="breadcrumbWorkspace">Personal Workspace</span>
+          <span class="crumb-sep">/</span>
+          <strong>My board</strong>
+        </div>
+
+        <div class="topbar-right">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="saved-label" id="syncStatusLabel">Saved to LocalStorage</span>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+          >
+            <span class="theme-icon" aria-hidden="true">☾</span>
+            <span class="theme-label">Dark mode</span>
+          </button>
+
+          <!-- NOTIFICATIONS POPOVER WRAPPER -->
+          <div class="popover-wrapper">
+            <button class="icon-button" id="notifButton" type="button" aria-label="Notifications">
+              <span>🔔</span>
+              <span class="notif-badge" id="notifBadge" hidden>0</span>
+            </button>
+            <div class="popover-menu notif-popover" id="notifPopover" hidden>
+              <div class="popover-header">
+                <strong>Urgent &amp; Overdue Alerts</strong>
+                <span id="notifSummaryText">0 alerts</span>
+              </div>
+              <div class="notif-list" id="notifList"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- BOARD PAGE -->
+      <section class="board-page">
+        <div class="board-heading">
+          <div>
+            <div class="eyebrow">KANBAN TASK MANAGEMENT</div>
+            <h1>My board <span class="title-star">✳</span></h1>
+            <p class="subtitle">Drag cards between columns. Full-card colors reflect task priority &amp; overdue urgency.</p>
+          </div>
+          <button class="primary-button" id="addTaskButton" type="button">
+            <span>＋</span> Add task
+          </button>
+        </div>
+
+        <!-- TOOLBAR: SEARCH, CUSTOM FILTER DROPDOWN & SUMMARY -->
+        <section class="toolbar" aria-label="Board filters">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search tasks by title or description..."
+              aria-label="Search tasks"
+            >
+            <kbd title="Press / to search">/</kbd>
+          </label>
+
+          <!-- CUSTOM INTERACTIVE PRIORITY DROPDOWN -->
+          <div class="custom-dropdown" id="priorityDropdown">
+            <button
+              type="button"
+              class="dropdown-trigger"
+              id="priorityDropdownTrigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <span class="swatch swatch-all" id="activeFilterSwatch"></span>
+              <span id="activeFilterLabel">All priorities</span>
+              <span class="dropdown-caret" aria-hidden="true">▾</span>
+            </button>
+
+            <ul class="dropdown-menu" id="priorityDropdownMenu" role="listbox" hidden>
+              <li role="option" data-priority="all" class="dropdown-option selected">
+                <span class="swatch swatch-all"></span>
+                <span>All priorities</span>
+                <span class="opt-count" data-prio-count="all">0</span>
+              </li>
+              <li role="option" data-priority="High" class="dropdown-option">
+                <span class="swatch swatch-high"></span>
+                <span>High — Coral Red</span>
+                <span class="opt-count" data-prio-count="High">0</span>
+              </li>
+              <li role="option" data-priority="Medium" class="dropdown-option">
+                <span class="swatch swatch-medium"></span>
+                <span>Medium — Warm Amber</span>
+                <span class="opt-count" data-prio-count="Medium">0</span>
+              </li>
+              <li role="option" data-priority="Low" class="dropdown-option">
+                <span class="swatch swatch-low"></span>
+                <span>Low — Lime Emerald</span>
+                <span class="opt-count" data-prio-count="Low">0</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- OVERDUE QUICK FILTER PILL -->
+          <button type="button" class="overdue-filter-btn" id="overdueFilterBtn" aria-pressed="false">
+            <span>⚠</span> Overdue Only
+            <span class="overdue-pill-count" id="overdueCountPill">0</span>
+          </button>
+
+          <div class="board-summary">
+            <span class="summary-dot"></span>
+            <span id="totalTasks">0 tasks</span>
+          </div>
+        </section>
+
+        <!-- 4-COLUMN KANBAN GRID -->
+        <section class="board-grid" id="boardGrid" aria-label="Kanban board">
+          <!-- TO DO -->
+          <section class="kanban-column" data-status="todo">
+            <header class="column-header">
+              <div class="column-title">
+                <span class="column-dot todo-dot"></span>
+                <h2>To Do</h2>
+                <span class="column-count" data-count="todo">0</span>
+              </div>
+              <div class="popover-wrapper">
+                <button class="column-menu" type="button" data-col-menu="todo" aria-label="To Do column actions">···</button>
+              </div>
+            </header>
+            <div class="task-list" data-list="todo"></div>
+            <button class="add-card" type="button" data-add="todo">＋ Add task to To Do</button>
+          </section>
+
+          <!-- IN PROGRESS -->
+          <section class="kanban-column" data-status="inprogress">
+            <header class="column-header">
+              <div class="column-title">
+                <span class="column-dot progress-dot"></span>
+                <h2>In Progress</h2>
+                <span class="column-count" data-count="inprogress">0</span>
+              </div>
+              <div class="popover-wrapper">
+                <button class="column-menu" type="button" data-col-menu="inprogress" aria-label="In Progress column actions">···</button>
+              </div>
+            </header>
+            <div class="task-list" data-list="inprogress"></div>
+            <button class="add-card" type="button" data-add="inprogress">＋ Add task to In Progress</button>
+          </section>
+
+          <!-- REVIEW -->
+          <section class="kanban-column" data-status="review">
+            <header class="column-header">
+              <div class="column-title">
+                <span class="column-dot review-dot"></span>
+                <h2>Review</h2>
+                <span class="column-count" data-count="review">0</span>
+              </div>
+              <div class="popover-wrapper">
+                <button class="column-menu" type="button" data-col-menu="review" aria-label="Review column actions">···</button>
+              </div>
+            </header>
+            <div class="task-list" data-list="review"></div>
+            <button class="add-card" type="button" data-add="review">＋ Add task to Review</button>
+          </section>
+
+          <!-- DONE -->
+          <section class="kanban-column" data-status="done">
+            <header class="column-header">
+              <div class="column-title">
+                <span class="column-dot done-dot"></span>
+                <h2>Done</h2>
+                <span class="column-count" data-count="done">0</span>
+              </div>
+              <div class="popover-wrapper">
+                <button class="column-menu" type="button" data-col-menu="done" aria-label="Done column actions">···</button>
+              </div>
+            </header>
+            <div class="task-list" data-list="done"></div>
+            <button class="add-card" type="button" data-add="done">＋ Add task to Done</button>
+          </section>
+        </section>
+
+        <footer class="board-footer">
+          <span><span class="footer-sparkle">✳</span> Priority Legend: <strong>High (Coral)</strong> · <strong>Medium (Amber)</strong> · <strong>Low (Lime)</strong> · <strong>Overdue (Vibrant Red)</strong></span>
+          <span>All changes persist automatically in LocalStorage</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <!-- TASK ADD / EDIT MODAL -->
+  <div class="modal-backdrop" id="taskModalBackdrop" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="taskModalTitle">
+      <div class="modal-header">
+        <h2 id="taskModalTitle">Add New Task</h2>
+        <button type="button" class="modal-close" id="closeTaskModalBtn" aria-label="Close modal">✕</button>
+      </div>
+      <form id="taskForm">
+        <input type="hidden" id="taskIdInput">
+
+        <label class="form-field">
+          <span>Task Title *</span>
+          <input type="text" id="taskTitleInput" required maxlength="80" placeholder="e.g., Design homepage">
+        </label>
+
+        <label class="form-field">
+          <span>Description *</span>
+          <textarea id="taskDescInput" rows="3" required maxlength="240" placeholder="e.g., Create wireframes and responsive layout specs"></textarea>
+        </label>
+
+        <div class="form-row">
+          <label class="form-field">
+            <span>Priority</span>
+            <select id="taskPriorityInput">
+              <option value="High">High (Coral / Red)</option>
+              <option value="Medium">Medium (Warm Amber)</option>
+              <option value="Low">Low (Lime / Green)</option>
+            </select>
+          </label>
+
+          <label class="form-field">
+            <span>Column Status</span>
+            <select id="taskStatusInput">
+              <option value="todo">To Do</option>
+              <option value="inprogress">In Progress</option>
+              <option value="review">Review</option>
+              <option value="done">Done</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form-field">
+          <span>Due Date (Set a past date to test Vibrant Red Overdue highlight)</span>
+          <input type="date" id="taskDueDateInput">
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" class="danger-button" id="deleteTaskModalBtn" hidden>Delete Task</button>
+          <div class="modal-actions-right">
+            <button type="button" class="secondary-button" id="cancelTaskModalBtn">Cancel</button>
+            <button type="submit" class="primary-button">Save Task</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- USER ACCOUNT MODAL -->
+  <div class="modal-backdrop" id="profileModalBackdrop" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+      <div class="modal-header">
+        <h2 id="profileModalTitle">User Account Settings</h2>
+        <button type="button" class="modal-close" id="closeProfileModalBtn" aria-label="Close profile modal">✕</button>
+      </div>
+      <form id="profileForm">
+        <label class="form-field">
+          <span>Account Name *</span>
+          <input type="text" id="profileNameInput" required maxlength="40" placeholder="User Account">
+        </label>
+        <label class="form-field">
+          <span>Workspace Label *</span>
+          <input type="text" id="profileWorkspaceInput" required maxlength="40" placeholder="Personal Workspace">
+        </label>
+        <label class="form-field">
+          <span>Avatar Initials (2 chars)</span>
+          <input type="text" id="profileInitialsInput" required maxlength="2" placeholder="UA">
+        </label>
+        <div class="modal-actions">
+          <div class="modal-actions-right">
+            <button type="button" class="secondary-button" id="cancelProfileModalBtn">Cancel</button>
+            <button type="submit" class="primary-button">Update Account</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACTIVITY HISTORY DRAWER -->
+  <div class="drawer-backdrop" id="activityDrawerBackdrop" hidden>
+    <aside class="activity-drawer" aria-label="Activity History">
+      <div class="drawer-header">
+        <div>
+          <h2>◷ Activity History</h2>
+          <p>Real-time audit log of your board actions</p>
+        </div>
+        <button type="button" class="modal-close" id="closeActivityDrawerBtn" aria-label="Close activity drawer">✕</button>
+      </div>
+      <div class="drawer-toolbar">
+        <button type="button" class="secondary-button" id="clearActivityBtn">Clear History</button>
+      </div>
+      <div class="activity-list" id="activityList"></div>
+    </aside>
+  </div>
+
+  <!-- COLUMN CONTEXT MENU POPOVER -->
+  <div class="popover-menu col-context-menu" id="colContextMenu" hidden>
+    <button type="button" class="context-item" data-col-action="add">＋ Add task here</button>
+    <button type="button" class="context-item" data-col-action="sort-priority">⇅ Sort by Priority (High → Low)</button>
+    <button type="button" class="context-item danger-text" data-col-action="clear">🗑 Clear all tasks in column</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

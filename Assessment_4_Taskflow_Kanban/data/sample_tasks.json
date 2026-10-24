@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Design homepage",
+    "desc": "Create wireframes",
+    "priority": "High",
+    "status": "todo",
+    "dueDate": "2026-10-23"
+  },
+  {
+    "id": 2,
+    "title": "Setup CI/CD",
+    "desc": "GitHub Actions pipeline",
+    "priority": "Medium",
+    "status": "inprogress",
+    "dueDate": "2026-10-27"
+  },
+  {
+    "id": 3,
+    "title": "Write API docs",
+    "desc": "OpenAPI spec",
+    "priority": "Low",
+    "status": "review",
+    "dueDate": "2026-10-29"
+  }
+]
