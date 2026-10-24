@@ -25,6 +25,7 @@ The project is designed for privacy-conscious environments where documents and m
 
 ![Video]([https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing])
 
+https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing
 
 ## 🏗️ System Architecture
 
