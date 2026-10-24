@@ -372,7 +372,7 @@ For small local LLMs, returning fewer high-quality passages may improve latency 
 
 Evaluation targets · 18 test cases - rag_test_cases.json
 
-# Target performance
+# Performance
 
 Answer correctness
 
