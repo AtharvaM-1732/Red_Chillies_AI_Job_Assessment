@@ -19,7 +19,11 @@ The project is designed for privacy-conscious environments where documents and m
 - **Modern Streamlit interface:** Upload documents, monitor indexing status, chat with the knowledge base, and inspect retrieved sources.
 - **PDF and TXT support:** Extract and process common document formats locally.
 
+<video src="[Red_Chillies_AI_Job_Assessment_RAG_Video.mp4](https://github.com/AtharvaM-1732/Red_Chillies_AI_Job_Assessment/blob/main/Assessment_5_RAG/Red_Chillies_AI_Job_Assessment_RAG_Video.mp4)" controls></video>
+
 [![RAG System User Interface](src/RAG_System_Interface.png)]([https://www.youtube.com/watch?v=VIDEO_ID](https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing))
+
+![Video]([https://anti-trust.rocks/albums/TheArbiterOfTruth.mp4](https://drive.google.com/file/d/1cLvhtouzVa2BmPK_tH9-fEKIvRm9eYs_/view?usp=sharing))
 
 
 ## 🏗️ System Architecture
